@@ -56,7 +56,7 @@
             </section>
             <section id="botonReservas" class="reservas__container">
                 <section class="reservas__padding">
-                    <div class="reservas__form"> <!--answer-->
+                    <div class="reservas__form">
                         <a href="contacto.html"  class="boton__reservas">Reservar una cita ahora.</a> <!--title-->
                         <form class="form__hidden" id="reservaForm">   
                             <input class="controls" type="text" id="nombre" placeholder="Nombre" name="nombre"><br><br>
@@ -67,15 +67,19 @@
                             <select class="controls" id="servicio" name="servicio" placeholder="Tipo de servicio">
                                 <option value="servicio1">Reparación del motor</option>
                                 <option value="servicio2">Cambio de aceite</option>
-                                <option value="servicio2">ABC de Motor</option>
-                                <option value="servicio2">Diagnostico computarizado</option>
-                                <option value="servicio2">Latonería y pintura</option>
-                                <option value="servicio2">Reparación de aire acondicionado</option>
-                                <option value="servicio2">Reparación del tren delantero</option>
-                                <option value="servicio2">ABC de frenos</option>
-                                <option value="servicio2">Reparación de frenos</option>
-                                <option value="servicio2">Reparación de sistemas de embrague</option>
+                                <option value="servicio3">ABC de Motor</option>
+                                <option value="servicio4">Diagnóstico computarizado</option>
+                                <option value="servicio5">Latonería y pintura</option>
+                                <option value="servicio6">Reparación de aire acondicionado</option>
+                                <option value="servicio7">Reparación del tren delantero</option>
+                                <option value="servicio8">ABC de frenos</option>
+                                <option value="servicio9">Reparación de frenos</option>
+                                <option value="servicio10">Reparación de sistemas de embrague</option>
+                                <option value="servicio11">Otro</option>
                             </select><br><br>
+                            <div id="otroServicio" class="other__hidden">
+                                <input class="controls" type="text" id="descripcionOtro" placeholder="Describa el servicio" name="otro">
+                            </div>
                             <input type="submit" id="botonEnviar" class="boton__enviar" value="Enviar">
                         </form>
     

@@ -12,3 +12,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
   });
+
+
+//funcion para cuando el cliete no sepa que tipo de servicio elegir
+
+
+  document.getElementById('servicio').addEventListener('change', function() {
+    var servicioSeleccionado = this.value;
+    var otroServicio = document.getElementById('otroServicio');
+    
+    if(servicioSeleccionado === 'servicio11') { // Si se selecciona "Otro"
+        otroServicio.classList.remove('other__hidden');
+        otroServicio.classList.add('other__show');
+    } else {
+        otroServicio.classList.remove('other__show');
+        // Espera a que la transición termine para ocultar completamente
+        setTimeout(() => {
+            otroServicio.classList.add('other__hidden');
+        }, 500); // Ajusta este tiempo al de la duración de tu transición
+    }
+});

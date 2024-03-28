@@ -134,6 +134,7 @@
 
  .mapa__picture{
   max-width: 600px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
  }
 
  .mapa__paragraph{
@@ -517,6 +518,14 @@
   margin: 0 auto;
   margin-bottom: 30px;
 }
+
+
+/* CSS para mostrar el campo con transición */
+.visible {
+  max-height: 100px; /* Ajusta esto según el tamaño de tu campo */
+  transition: max-height 0.5s ease-in;
+}
+
 /*------- Reservas ------*/
 .reservas__container{
  text-align: center;
@@ -590,6 +599,18 @@
   border-radius: 32px;
   margin: 16px 0;
   cursor: pointer;
+}
+
+.other__hidden{
+  display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.other__show {
+  max-height: 100px; /* Ajusta esto según el tamaño de tu campo */
+  transition: max-height 0.5s ease-in;
 }
 
 /* Footer*/
@@ -823,6 +844,23 @@
    flex: 1;
 }
 
+.reservas__container{
+ margin: 0;
+}
+
+.reservas__form{
+  margin: 0;
+  width: 100%;
+}
+
+.form__hidden{
+  width: 100%;
+}
+
+.form__show{
+  width: 100%;
+}
+
 }
 
 @media (max-width:600px){
@@ -844,7 +882,6 @@
   .about__icons:last-of-type{
     grid-column: 1/-1;
   }
-
  
 
   .testimony{
@@ -911,6 +948,28 @@
   }
 
   .footer__submit{
+    margin: 0;
+    width: 100%;
+  }
+
+  .reservas__container{
+    margin: 0;
+    width: 100%;
+  }
+
+  .reservas__form{
+    width: 100%;
+  }
+
+  .form__hidden{
+    width: 100%;
+  }
+
+  .form__show{
+    width: 100%;
+  }
+
+  .boton__enviar{
     margin: 0;
     width: 100%;
   }

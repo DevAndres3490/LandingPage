@@ -582,7 +582,7 @@
 .controls{
   font-family: 'Poppins', sans-serif;
   color: #001A49;
-  width: 100%;
+  width: 90%;
   padding: 10px;
   border-radius: 4px;
   margin-bottom: 16px;
@@ -613,7 +613,26 @@
   transition: max-height 0.5s ease-in;
 }
 
+.invalid-feedback {
+  margin-left: 1%;
+  color: red;
+  display: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+}
+
+.mensaje__error{
+background-color: red;
+color: white;
+display: none;
+}
+
+.is-invalid + .invalid-feedback {
+  display: inline;
+}
+
 /* Footer*/
+
 .footer{
   background-color: #1D293F;
 }

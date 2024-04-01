@@ -59,12 +59,13 @@
                     <div class="reservas__form">
                         <a href="contacto.html"  class="boton__reservas">Reservar una cita ahora.</a> <!--title-->
                         <form class="form__hidden" id="reservaForm">   
-                            <input class="controls" type="text" id="nombre" placeholder="Nombre" name="nombre"><br><br>
-                            <input class="controls" type="text" id="apellido" placeholder="Apellido" name="apellido"><br><br>
-                            <input class="controls" type="tel" id="telefono" placeholder="Teléfono" name="telefono"><br><br>
-                            <input class="controls" type="email" id="email" placeholder="Email" name="email"><br><br>
+                            <input class="controls" type="text" id="nombre" placeholder="Nombre" name="nombre" required><br><br>
+                            <input class="controls" type="text" id="apellido" placeholder="Apellido" name="apellido" required><br><br>
+                            <input class="controls" type="tel" id="telefono" placeholder="Teléfono" name="telefono" required><br><br>
+                            <input class="controls" type="email" id="email" placeholder="Email" name="email" required><br><br>
                             <label class="data" for="servicio">Tipo de Servicio:</label>
-                            <select class="controls" id="servicio" name="servicio" placeholder="Tipo de servicio">
+                            <select class="controls" id="servicio" name="servicio" placeholder="Tipo de servicio" required>
+                                <option value="">Seleccione un servicio</option>
                                 <option value="servicio1">Reparación del motor</option>
                                 <option value="servicio2">Cambio de aceite</option>
                                 <option value="servicio3">ABC de Motor</option>
@@ -77,10 +78,12 @@
                                 <option value="servicio10">Reparación de sistemas de embrague</option>
                                 <option value="servicio11">Otro</option>
                             </select><br><br>
+                            <span class="error-message" id="errorNombre"></span><br><br>
                             <div id="otroServicio" class="other__hidden">
                                 <input class="controls" type="text" id="descripcionOtro" placeholder="Describa el servicio" name="otro">
                             </div>
                             <input type="submit" id="botonEnviar" class="boton__enviar" value="Enviar">
+                            <div id="mensajeError" class="mensaje__error" style="display: none;">Rellene correctamente los campos con *</div>
                         </form>
     
                     </div>
@@ -142,6 +145,5 @@
         <script src="./js/menu.js"></script>
         <script src="./js/cita.js"></script>
         <script src="./js/enviar.js"></script>
-
     </body>
 </html>

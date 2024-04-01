@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Opcional: reinicia el formulario después de ocultarlo
     formulario.reset();
     });
-
+    
   });
 
 

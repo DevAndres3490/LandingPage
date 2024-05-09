@@ -1,22 +1,135 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>GarzoAUTO</title>
-        <link rel="shorcut icon" href="./image/logojpg.png" type="image/x-icon">
-        <link rel="stylesheet" href="./css/normalize.css">
-        <link rel="stylesheet" href="./css/estilos.css">
-    </head>
-    <body>
-        <header class="acercaDe">
-            <nav class="nav container">
-                <div class="nav__logo">
-                    <a href="./index.html"><img src="./image/logo.png.png" alt="GarzoAUTO Logo" class="nav__title-logo"></a>
-                    
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GarzoAUTO</title>
+    <link rel="shorcut icon" href="./image/logojpg.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+
+<body>
+    <header class="acercaDe">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <a href="./index.html"><img src="./image/logo.png.png" alt="GarzoAUTO Logo" class="nav__title-logo"></a>
+
+            </div>
+            <ul class="nav__link nav__link--menu">
+                <li class="nav__items">
+                    <a href="./index.html" class="nav__links">Inicio</a>
+                </li>
+                <li class="nav__items">
+                    <a href="./servicios.html" class="nav__links">Servicios</a>
+                </li>
+                <li class="nav__items">
+                    <a href="./contacto.html" class="nav__links active">Contacto</a>
+                </li>
+                <!--
+                    <li class="nav__items">
+                        <a href="#" class="nav__links">Blog</a>
+                    </li>
+                    -->
+                <img src="./image/xClose.svg" alt="xClose" class="nav__close">
+            </ul>
+
+            <div class="nav__menu">
+                <img src="./image/menuMobil.svg" alt="menu" class="nav__img">
+            </div>
+        </nav>
+
+        <section class="hero__container container">
+            <h1 class="hero__title">Nos apasiona nuestro trabajo.</h1>
+            <p class="hero__paragraph">
+                En Talleres GarzoAUTO, tu seguridad es nuestra prioridad.
+                Nuestro equipo, en constante formación, se adapta a las últimas
+                tecnologías para ofrecerte el mejor servicio.</p>
+        </section>
+    </header>
+
+    <main>
+        <section class="team">
+            <div class="contenedor">
+                <img src="./image/teamFinal.jpg" alt="equipo" class="team__img">
+                <div>
+                    <h1 class="subtitle__acercaDe">Conoce a nuestro equipo.</h2>
                 </div>
-                <ul class="nav__link nav__link--menu">
+            </div>
+        </section>
+        <section id="botonReservas" class="reservas__container">
+            <section class="reservas__padding">
+                <div class="reservas__form">
+                    <a href="contacto.html" class="boton__reservas">Reservar una cita ahora.</a>
+                    <!--title-->
+                    <form class="form__hidden" id="reservaForm">
+                        <input class="controls" type="text" id="nombre" placeholder="Nombre" name="nombre"
+                            required><br><br>
+                        <input class="controls" type="text" id="apellido" placeholder="Apellido" name="apellido"
+                            required><br><br>
+                        <input class="controls" type="tel" id="telefono" placeholder="Teléfono" name="telefono"
+                            required><br><br>
+                        <input class="controls" type="email" id="email" placeholder="Email" name="email"
+                            required><br><br>
+                        <input class="controls" type="time" id="hora" placeholder="Hora" name="hora" required><br><br>
+                        <input class="controls" type="date" id="fecha" placeholder="Fecha" name="fecha"
+                            required><br><br>
+                        <label class="data" for="servicio">Tipo de Servicio:</label>
+                        <select class="controls" id="servicio" name="servicio" placeholder="Tipo de servicio" required>
+                            <option value="">Seleccione un servicio</option>
+                            <option value="servicio1">Reparación del motor</option>
+                            <option value="servicio2">Cambio de aceite</option>
+                            <option value="servicio3">ABC de Motor</option>
+                            <option value="servicio4">Diagnóstico computarizado</option>
+                            <option value="servicio5">Latonería y pintura</option>
+                            <option value="servicio6">Reparación de aire acondicionado</option>
+                            <option value="servicio7">Reparación del tren delantero</option>
+                            <option value="servicio8">ABC de frenos</option>
+                            <option value="servicio9">Reparación de frenos</option>
+                            <option value="servicio10">Reparación de sistemas de embrague</option>
+                            <option value="servicio11">Otro</option>
+                        </select><br><br>
+                        <span class="error-message" id="errorNombre"></span><br><br>
+                        <div id="otroServicio" class="other__hidden">
+                            <input class="controls" type="text" id="descripcionOtro" placeholder="Describa el servicio"
+                                name="otro">
+                        </div>
+                        <input type="submit" id="botonEnviar" class="boton__enviar" value="Enviar">
+                        <div id="mensajeError" class="mensaje__error" style="display: none;">Rellene correctamente los
+                            campos con *</div>
+                    </form>
+
+                </div>
+            </section>
+        </section>
+
+        <section class="mapa">
+            <div class="mapa__container container">
+                <div class="mapa__texts">
+                    <h3 class="datos">Dirección.</h2>
+                        <p class="mapa__paragraph">Ciudadela Ietel, manzana 9, solar 2 (sector Garzota).</p>
+                        <h3 class="datos">Telefono.</h2>
+                            <p class="mapa__paragraph">+593 978 788 123</p>
+                            <h3 class="datos">Correo electronico.</h2>
+                                <p class="mapa__paragraph">tallergarzoauto@gmail.com</p>
+                </div>
+                <figure class="mapa__picture">
+                    <iframe class="mapa__img"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15958.628544524588!2d-79.8964847!3d-2.1515875!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMsKwMDknMDYuNSJTIDc5wrA1Myc0MC40Ilc!5e0!3m2!1sen!2s!4v1639243535000!5m2!1sen!2s"
+                        width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <section class="footer__container container">
+            <nav class="nav nav--footer">
+                <h2 class="footer__title">GarzoAuto</h2>
+                <ul class="nav__link nav__link--footer">
                     <li class="nav__items">
                         <a href="./index.html" class="nav__links">Inicio</a>
                     </li>
@@ -30,120 +143,26 @@
                         <a href="#" class="nav__links">Blog</a>
                     </li>
 
-                    <img src="./image/xClose.svg" alt="xClose" class="nav__close">
                 </ul>
-
-                <div class="nav__menu">
-                    <img src="./image/menuMobil.svg" alt="menu" class="nav__img">
-                </div>
             </nav>
-        
-            <section class="hero__container container">
-                <h1 class="hero__title">Nos apasiona nuestro trabajo.</h1>
-                <p class="hero__paragraph">
-                    En Talleres GarzoAUTO, tu seguridad es nuestra prioridad. 
-                    Nuestro equipo, en constante formación, se adapta a las últimas 
-                    tecnologías para ofrecerte el mejor servicio.</p>
-            </section>
-        </header>
 
-        <main>
-            <section class="team">
-                <div class="contenedor">
-                    <img src="./image/teamFinal.jpg" alt="equipo" class="team__img">
-                    <div><h1 class="subtitle__acercaDe">Conoce a nuestro equipo.</h2></div>   
-                </div>
-            </section>
-            <section id="botonReservas" class="reservas__container">
-                <section class="reservas__padding">
-                    <div class="reservas__form">
-                        <a href="contacto.html"  class="boton__reservas">Reservar una cita ahora.</a> <!--title-->
-                        <form class="form__hidden" id="reservaForm">   
-                            <input class="controls" type="text" id="nombre" placeholder="Nombre" name="nombre" required><br><br>
-                            <input class="controls" type="text" id="apellido" placeholder="Apellido" name="apellido" required><br><br>
-                            <input class="controls" type="tel" id="telefono" placeholder="Teléfono" name="telefono" required><br><br>
-                            <input class="controls" type="email" id="email" placeholder="Email" name="email" required><br><br>
-                            <label class="data" for="servicio">Tipo de Servicio:</label>
-                            <select class="controls" id="servicio" name="servicio" placeholder="Tipo de servicio" required>
-                                <option value="">Seleccione un servicio</option>
-                                <option value="servicio1">Reparación del motor</option>
-                                <option value="servicio2">Cambio de aceite</option>
-                                <option value="servicio3">ABC de Motor</option>
-                                <option value="servicio4">Diagnóstico computarizado</option>
-                                <option value="servicio5">Latonería y pintura</option>
-                                <option value="servicio6">Reparación de aire acondicionado</option>
-                                <option value="servicio7">Reparación del tren delantero</option>
-                                <option value="servicio8">ABC de frenos</option>
-                                <option value="servicio9">Reparación de frenos</option>
-                                <option value="servicio10">Reparación de sistemas de embrague</option>
-                                <option value="servicio11">Otro</option>
-                            </select><br><br>
-                            <span class="error-message" id="errorNombre"></span><br><br>
-                            <div id="otroServicio" class="other__hidden">
-                                <input class="controls" type="text" id="descripcionOtro" placeholder="Describa el servicio" name="otro">
-                            </div>
-                            <input type="submit" id="botonEnviar" class="boton__enviar" value="Enviar">
-                            <div id="mensajeError" class="mensaje__error" style="display: none;">Rellene correctamente los campos con *</div>
-                        </form>
-    
-                    </div>
-                </section>
-            </section>
+        </section>
+        <section class="footer__copy container">
+            <div class="footer__social">
+                <a href="#" class="footer__icons"><img src="./image/facebook.svg" alt="facebook"
+                        class="footer__img"></a>
+                <a href="#" class="footer__icons"><img src="./image/instagram.svg" alt="instagram"
+                        class="footer__img"></a>
+                <a href="#" class="footer__icons"><img src="./image/twitter.svg" alt="twitter" class="footer__img"></a>
+            </div>
+            <h3 class="footer__copyright">Derechos reservados &copy; Monarch Consulting</h3>
+        </section>
+    </footer>
+    <script src="./js/slider.js"></script>
+    <script src="./js/questions.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/cita.js"></script>
+    <script src="./js/enviar.js"></script>
+</body>
 
-            <section class="mapa">
-                <div class="mapa__container container">
-                    <div class="mapa__texts">
-                        <h3 class="datos">Dirección.</h2>
-                        <p class="mapa__paragraph">Ciudadela Ietel, manzana 9, solar 2 (sector Garzota).</p>
-                        <h3 class="datos">Telefono.</h2>
-                        <p class="mapa__paragraph">+593 978 788 123</p>
-                        <h3 class="datos">Correo electronico.</h2>
-                        <p class="mapa__paragraph">tallergarzoauto@gmail.com</p>
-                    </div>
-                    <figure class="mapa__picture">
-                        <iframe class="mapa__img" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15958.628544524588!2d-79.8964847!3d-2.1515875!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMsKwMDknMDYuNSJTIDc5wrA1Myc0MC40Ilc!5e0!3m2!1sen!2s!4v1639243535000!5m2!1sen!2s"
-                        width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy">                
-                        </iframe>
-                    </figure>
-                </div>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <section class="footer__container container">
-                <nav class="nav nav--footer">
-                    <h2 class="footer__title">GarzoAuto</h2>
-                    <ul class="nav__link nav__link--footer">
-                        <li class="nav__items">
-                            <a href="./index.html" class="nav__links">Inicio</a>
-                        </li>
-                        <li class="nav__items">
-                            <a href="./servicios.html" class="nav__links">Servicios</a>
-                        </li>
-                        <li class="nav__items">
-                            <a href="./contacto.html" class="nav__links">Contacto</a>
-                        </li>
-                        <li class="nav__items">
-                            <a href="#" class="nav__links">Blog</a>
-                        </li>
-    
-                    </ul>
-                </nav>
-
-            </section>
-            <section class="footer__copy container">
-                <div class="footer__social">
-                    <a href="#" class="footer__icons"><img src="./image/facebook.svg" alt="facebook" class="footer__img"></a>
-                    <a href="#" class="footer__icons"><img src="./image/instagram.svg" alt="instagram" class="footer__img"></a>
-                    <a href="#" class="footer__icons"><img src="./image/twitter.svg" alt="twitter" class="footer__img"></a>
-                </div>
-                <h3 class="footer__copyright">Derechos reservados &copy; Monarch Consulting</h3>
-            </section>
-        </footer>
-        <script src="./js/slider.js"></script>
-        <script src="./js/questions.js"></script>
-        <script src="./js/menu.js"></script>
-        <script src="./js/cita.js"></script>
-        <script src="./js/enviar.js"></script>
-    </body>
 </html>

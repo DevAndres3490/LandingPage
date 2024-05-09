@@ -222,6 +222,12 @@
     display: var(--show, none);
   }
 
+  .nav__links.active {
+   
+    font-weight: bold;
+    color: #2091f9;
+}
+
   /* hero container */
   .hero__container{
     max-width: 800px;

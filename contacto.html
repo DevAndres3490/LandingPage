@@ -73,7 +73,20 @@
                             required><br><br>
                         <input class="controls" type="email" id="email" placeholder="Email" name="email"
                             required><br><br>
-                        <input class="controls" type="time" id="hora" placeholder="Hora" name="hora" required><br><br>
+                            <select class="controls" id="hora" name="hora" required>
+                                <option value="">Seleccione una hora</option>
+                                <option value="08:00">08:00</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">10:00</option>
+                                <option value="12:00">10:00</option>
+                                <option value="13:00">10:00</option>
+                                <option value="14:00">10:00</option>
+                                <hr>
+                                <option value="16:00">10:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                            </select><br><br>
                         <input class="controls" type="date" id="fecha" placeholder="Fecha" name="fecha"
                             required><br><br>
                         <label class="data" for="servicio">Tipo de Servicio:</label>
@@ -163,6 +176,10 @@
     <script src="./js/menu.js"></script>
     <script src="./js/cita.js"></script>
     <script src="./js/enviar.js"></script>
+    <script src="./js/obtenerFecha.js">
+    </script>
+    <script src="./js/obtenerHora.js"></script>
+
 </body>
 
 </html>

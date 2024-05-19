@@ -1,9 +1,9 @@
-// Función para actualizar las horas disponibles cuando cambia la fecha
 function actualizarHorasDisponibles() {
     const fechaInput = document.getElementById('fecha').value;
     const selectedDate = new Date(fechaInput);
+    const currentDate = new Date();
     const currentDay = selectedDate.getDay();
-    const currentHour = new Date().getHours();
+    const currentHour = currentDate.getHours();
     let limitHour;
 
     // Determinar el límite de horas según el día de la semana
@@ -15,19 +15,23 @@ function actualizarHorasDisponibles() {
         limitHour = 0; // No se permiten reservas los domingos
     }
 
-    // Si la fecha es hoy, limitar las horas disponibles a partir de la hora actual
-    if (selectedDate.toDateString() === new Date().toDateString()) {
-        limitHour = Math.min(limitHour, 19); // Limitar al horario de cierre, independientemente del día
-    }
-
     const horaSelect = document.getElementById('hora');
     horaSelect.innerHTML = ''; // Limpiar opciones anteriores
 
-    // Si es lunes a viernes, el límite es 19, si es sábado, el límite es 15
-    for (let i = 9; i <= limitHour && i <= 19; i++) {
-        const option = document.createElement('option');
-        option.text = `${i}:00`; // Formato de hora HH:00
-        horaSelect.add(option);
+    // Si la fecha es hoy, limitar las horas disponibles a partir de la hora actual
+    if (selectedDate.toDateString() === currentDate.toDateString()) {
+        for (let i = Math.max(currentHour + 1, 9); i <= limitHour && i <= 19; i++) {
+            const option = document.createElement('option');
+            option.text = `${i}:00`; // Formato de hora HH:00
+            horaSelect.add(option);
+        }
+    } else {
+        // Si no es hoy, mostrar todas las horas disponibles dentro del límite
+        for (let i = 9; i <= limitHour && i <= 19; i++) {
+            const option = document.createElement('option');
+            option.text = `${i}:00`; // Formato de hora HH:00
+            horaSelect.add(option);
+        }
     }
 }
 

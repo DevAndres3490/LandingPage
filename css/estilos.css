@@ -68,51 +68,6 @@
     z-index: -1;
   }
 
-  .acercaDe__container {
-    max-width: 800px;
-    --padding-container: 0;
-    display: grid;
-    grid-auto-rows: max-content;
-    align-content: center;
-    gap: 1em;
-    padding-bottom: 100px;
-    text-align: center;
-  }
-
-  .acercaDe__paragraph {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    line-height: 1.7;
-    font-size: 1.2rem;
-
-  }
-
-  /*---- team ----*/
-
-  .contenedor {
-    width: 100%;
-    height: 30%;
-    position: relative;
-    background-size: cover;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-
-  .team__img {
-    width: 100%;
-    padding-top: 2%;
-    border-radius: 2%;
-  }
-
-  .subtitle__acercaDe {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    font-size: 2rem;
-  }
 
   /*---- mapa ----*/
 

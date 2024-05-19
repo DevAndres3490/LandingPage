@@ -20,7 +20,7 @@
 
 <body>
 
-    <div class="container py-1">
+    <div class="container py-0">
 
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -36,19 +36,19 @@
                 <!-- Collapsible wrapper -->
                 <div class="collapse navbar-collapse align-items-center" id="navbarSupportedContent">
                     <!-- Navbar brand -->
-                    <a class="navbar-brand mt-2 mt-lg-0" href="#">
-                        <img src="/image/logo.png.png" height="60" alt="FarzoAuto logo" loading="lazy" />
+                    <a class="navbar-brand mt-2 mt-lg-0" href="index.html">
+                        <img src="/image/logo.png.png" height="80" alt="FarzoAuto logo" loading="lazy" />
                     </a>
                     <!-- Right links -->
                     <ul class="navbar-nav ms-auto mb-lg-0">
-                        <li class="nav-item me-2">
-                            <a class="nav-link text-light" href="index.html">Inicio</a>
+                        <li class="nav-item me-3">
+                            <a class="nav-link text-light fs-6" href="index.html">Inicio</a>
                         </li>
-                        <li class="nav-item me-2">
-                            <a class="nav-link text-light" href="servicios.html">Servicios</a>
+                        <li class="nav-item me-3">
+                            <a class="nav-link text-light fs-6" href="servicios.html">Servicios</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-primary" href="contacto.html">Contacto</a>
+                        <li class="nav-item me-3">
+                            <a class="nav-link active text-primary fw-bold fs-6" href="contacto.html">Contacto</a>
                         </li>
                     </ul>
                     <!-- Right links -->
@@ -74,149 +74,172 @@
 
     <main>
         <section class="team">
-            <div class="contenedor">
-                <img src="./image/teamFinal.jpg" alt="equipo" class="team__img">
-                <div>
-                    <h1 class="subtitle__acercaDe">Conoce a nuestro equipo.</h2>
+            <div class="card bg-image hover-overlay ripple shadow-1-strong rounded" data-mdb-ripple-color="light">
+                <img src="./image/teamFinal.jpg" class="card-img shadow-lg" style="background-color: rgba(0, 0, 0, 0.5)">
+                <div class="mask text-light d-flex justify-content-center flex-column text-center">
+                    <h1 class="fs-1">Conoce a nuestro equipo.</h1>
+                    <p class="m-0">Nuestro equipo de expertos dedicados está aquí para brindarte el mejor servicio y cuidado para tu vehículo.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Modal para las reservas -->
         <div class="container">
-             <!-- modal para la creaacion de un usuario -->
-        <div class="d-flex mb-0 justify-content-center py-5">
+            <!-- modal para la creaacion de un usuario -->
+            <div class="d-flex mb-0 justify-content-center py-5">
 
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-lg btn-primary shadow rounded" id="botonReservas"
-                data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-mdb-ripple-init>
-                Reservar cita
-            </button>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-lg btn-primary shadow-lg rounded" id="botonReservas"
+                    data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-mdb-ripple-init>
+                    Reservar cita
+                </button>
 
-            <!-- Modal -->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog text-center">
-                    <div class="modal-content text-center">
+                <!-- Modal -->
 
-                        <div class="modal-header">
-                            <h1 class="modal-title fw-bold text-uppercase" id="staticBackdropLabel">
-                                Registro</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
+                <div class="modal fade p-4" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered text-center">
+                        <div class="modal-content text-center">
 
-                        <div class="card-body p-4 ">
+                            <div class="modal-header">
+                                <h1 class="modal-title fw-bold text-uppercase" id="staticBackdropLabel">
+                                    Registro</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
 
-                            <form id="reservaForm" method="POST" class="row g-3 needs-validation" novalidate>
-                                <div class="mb-md-4 mt-md-3 pb-3">
+                            <div class="card-body p-4 ">
 
-                                    <div data-mdb-input-init class="form-outline form-white mb-4">
-                                        <input name="name" type="text" id="name"
-                                            class="form-control form-control-lg shadow text-dark"
-                                            id="validationCustomUsername" aria-describedby="inputGroupPrepend"
-                                            required />
-                                        <label class="form-label text-dark " for="email">Nombre</label>
-                                        <div class="invalid-feedback">
-                                            Por favor ingrese un nombre valido
+                                <form id="reservaForm" method="POST" class="row g-3 needs-validation" novalidate>
+                                    <div class="mb-md-4 mt-md-3 pb-3">
+
+                                        <div data-mdb-input-init class="form-outline form-white mb-4">
+                                            <input name="name" type="text" id="name"
+                                                class="form-control form-control-lg shadow text-dark"
+                                                id="validationCustomUsername" aria-describedby="inputGroupPrepend"
+                                                minlength="4" maxlength="30" required />
+                                            <label class="form-label text-dark " for="email">Nombre</label>
+                                            <div class="invalid-feedback">
+                                                Por favor ingrese un nombre valido
+                                            </div>
                                         </div>
-                                    </div>
 
 
 
-                                    <div data-mdb-input-init class="form-outline form-white mb-4">
-                                        <input name="apellido" type="text" id="apellido"
-                                            class="form-control form-control-lg shadow" id="validationEmail"
-                                            aria-describedby="inputGroupPrepend" required />
-                                        <label class="form-label text-dark" for="email">Apellido</label>
-                                        <div class="invalid-feedback">
-                                            Por favor ingrese un apellido valido
+                                        <div data-mdb-input-init class="form-outline form-white mb-4 mt-2">
+                                            <input name="apellido" type="text" id="apellido"
+                                                class="form-control form-control-lg shadow text-dark"
+                                                id="validationEmail" aria-describedby="inputGroupPrepend" minlength="4"
+                                                maxlength="30" required />
+                                            <label class="form-label text-dark" for="email">Apellido</label>
+                                            <div class="invalid-feedback">
+                                                Por favor ingrese un apellido valido
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div data-mdb-input-init class="form-outline form-white mb-4">
-                                        <input name="telefono" type="tel" id="telefono"
-                                            class="form-control form-control-lg shadow" id="validationEmail"
-                                            aria-describedby="inputGroupPrepend" required />
-                                        <label class="form-label text-dark" for="email">Numero de teléfono</label>
-                                        <div class="invalid-feedback">
-                                            Por favor ingrse un numero de teléfono valido
+                                        <div data-mdb-input-init class="form-outline form-white mb-4 mt-2">
+                                            <input name="telefono" type="tel" id="telefono"
+                                                class="form-control form-control-lg shadow text-dark"
+                                                id="validationEmail" aria-describedby="inputGroupPrepend"
+                                                pattern="\d{6,15}" minlength="6" maxlength="15" required />
+                                            <label class="form-label text-dark" for="email">Numero de
+                                                teléfono</label>
+                                            <div class="invalid-feedback">
+                                                Por favor ingrse un numero de teléfono valido
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div data-mdb-input-init class="form-outline form-white mb-4">
-                                        <input name="email" type="email" id="email"
-                                            class="form-control form-control-lg shadow text-dark" id="validationEmail"
-                                            aria-describedby="inputGroupPrepend" required />
-                                        <label class="form-label text-dark" for="email">Email</label>
-                                        <div class="invalid-feedback">
-                                            Por favor ingrse un correo electrónico valido.
+                                        <div data-mdb-input-init class="form-outline form-white mb-4 mt-2">
+                                            <input name="email" type="email" id="email"
+                                                class="form-control form-control-lg shadow text-dark"
+                                                id="validationEmail" aria-describedby="inputGroupPrepend" minlength="10"
+                                                maxlength="40" required />
+                                            <label class="form-label text-dark" for="email">Email</label>
+                                            <div class="invalid-feedback">
+                                                Por favor ingrse un correo electrónico valido.
+                                            </div>
                                         </div>
-                                    </div>
 
 
-                                    <div class="form-outline form-white mb-4">
-                                        <input class="form-control form-control-lg shadow text-dark" type="date"
-                                            id="fecha" name="fecha" aria-describedby="inputGroupPrepend" required>
+                                        <div class="form-outline form-white mb-4 mt-2">
+                                            <input class="form-control form-control-lg shadow text-dark" type="date"
+                                                id="fecha" name="fecha" aria-describedby="inputGroupPrepend" id="fecha"
+                                                name="fecha" min="" required>
                                             <div class="invalid-feedback">
                                                 Por favor seleccione una fecha.
                                             </div>
-                                    </div>
+                                        </div>
 
 
-                                    <div class="form-outline form-white mb-4">
+                                        <div class="form-outline form-white mb-4 mt-2">
 
-                                        <select data-mdb-select-init name="hora" class="form-select form-select-lg  shadow" id="hora"
-                                            required>
-                                        </select>
+                                            <select data-mdb-select-init name="hora"
+                                                class="form-select form-select-lg  shadow" id="hora" required>
+                                            </select>
 
-                                        <div class="invalid-feedback">
-                                            Por favor seleccione una hora.
+                                            <div class="invalid-feedback">
+                                                Por favor seleccione una hora.
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-outline form-white mb-5">
+
+                                            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                                            <select data-mdb-select-init class="form-select form-select-lg  shadow"
+                                                required>
+                                                <option selected value="">Seleccione un servicio</option>
+                                                <option value="servicio1">Reparación del motor</option>
+                                                <option value="servicio2">Cambio de aceite</option>
+                                                <option value="servicio3">ABC de Motor</option>
+                                                <option value="servicio4">Diagnóstico computarizado</option>
+                                                <option value="servicio5">Latonería y pintura</option>
+                                                <option value="servicio6">Reparación de aire acondicionado</option>
+                                                <option value="servicio7">Reparación del tren delantero</option>
+                                                <option value="servicio8">ABC de frenos</option>
+                                                <option value="servicio9">Reparación de frenos</option>
+                                                <option value="servicio10">Reparación de sistemas de embrague
+                                                </option>
+                                                <option value="servicio11">Otro</option>
+                                            </select>
+
+
+                                            <div class="invalid-feedback">
+                                                Por favor seleccione un servicio.
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-12 mt-2">
+                                            <button class="btn btn-primary" type="submit">Enviar datos</button>
                                         </div>
                                     </div>
 
-
-                                    <div class="form-outline form-white mb-5">
-
-                                        <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
-                                        <select data-mdb-select-init class="form-select form-select-lg  shadow" required>
-                                            <option selected value="">Selecciones un servicio</option>
-                                            <option value="servicio1">Reparación del motor</option>
-                                            <option value="servicio2">Cambio de aceite</option>
-                                            <option value="servicio3">ABC de Motor</option>
-                                            <option value="servicio4">Diagnóstico computarizado</option>
-                                            <option value="servicio5">Latonería y pintura</option>
-                                            <option value="servicio6">Reparación de aire acondicionado</option>
-                                            <option value="servicio7">Reparación del tren delantero</option>
-                                            <option value="servicio8">ABC de frenos</option>
-                                            <option value="servicio9">Reparación de frenos</option>
-                                            <option value="servicio10">Reparación de sistemas de embrague</option>
-                                            <option value="servicio11">Otro</option>
-                                        </select>
-
-
-                                        <div class="invalid-feedback">
-                                            Por favor seleccione un servicio.
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="col-12">
-                                        <button class="btn btn-primary" type="submit">Enviar datos</button>
-                                    </div>
-                                </div>
-
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+
             </div>
-
-        </div>
         </div>
 
-       
+        <!-- Modal -->
+        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark text-white">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="successModalLabel">Datos Correctos</h5>
+                    </div>
+                    <div class="modal-body">
+                        Los datos son correctos. Será redirigido a la página principal en unos segundos.
+                    </div>
 
-
+                </div>
+            </div>
+        </div>
 
 
         <section class="mapa">
@@ -242,7 +265,7 @@
     <footer class="footer">
         <section class="footer__container container">
             <nav class="nav nav--footer">
-                <h2 class="footer__title">GarzoAuto</h2>
+
                 <ul class="nav__link nav__link--footer">
                     <li class="nav__items">
                         <a href="./index.html" class="nav__links">Inicio</a>
@@ -251,23 +274,27 @@
                         <a href="./servicios.html" class="nav__links">Servicios</a>
                     </li>
                     <li class="nav__items">
-                        <a href="./contacto.html" class="nav__links">Contacto</a>
+                        <a href="./contacto.html" class="nav__links active fw-bolder text-primary">Contacto</a>
                     </li>
-                    <li class="nav__items">
-                        <a href="#" class="nav__links">Blog</a>
-                    </li>
+
 
                 </ul>
             </nav>
-
+            <!--<form class="footer__form">
+                <h2 class="footer__newsletter">Suscribete a la newsletter</h2>
+                <div class="footer__inputs">
+                    <input type="email" placeholder="Email" class="footer__input">
+                    <input type="submit" placeholder="Registrate" class="footer__submit">
+                </div>-->
+            </form>
         </section>
         <section class="footer__copy container">
             <div class="footer__social">
                 <a href="#" class="footer__icons"><img src="./image/facebook.svg" alt="facebook"
                         class="footer__img"></a>
-                <a href="#" class="footer__icons"><img src="./image/instagram.svg" alt="instagram"
+                <a href="https://www.instagram.com/garzoautotaller/?igsh=andqaWMxaTZlZDU%3D" class="footer__icons" target="_blank"><img src="./image/instagram.svg" alt="instagram"
                         class="footer__img"></a>
-                <a href="#" class="footer__icons"><img src="./image/twitter.svg" alt="twitter" class="footer__img"></a>
+                <!--<a href="#" class="footer__icons"><img src="./image/twitter.svg" alt="twitter" class="footer__img"></a> -->
             </div>
             <h3 class="footer__copyright">Derechos reservados &copy; Monarch Consulting</h3>
         </section>
@@ -277,9 +304,9 @@
     <script src="./js/menu.js"></script>
     <script src="./js/cita.js"></script>
     <script src="./js/enviar.js"></script>
-    <script src="./js/obtenerFecha.js">
-    </script>
+    <script src="./js/obtenerFecha.js"></script>
     <script src="./js/obtenerHora.js"></script>
+    <script src="./js/validar.js"></script>
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js">
     </script>
@@ -291,6 +318,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
     </script>
+
 
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields

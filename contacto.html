@@ -112,82 +112,69 @@
 
                                 <form id="reservaForm" method="POST" class="row g-3 needs-validation" novalidate>
                                     <div class="mb-md-4 mt-md-3 pb-3">
-
+                                
                                         <div data-mdb-input-init class="form-outline form-white mb-4">
                                             <input name="name" type="text" id="name"
                                                 class="form-control form-control-lg shadow text-dark"
-                                                id="validationCustomUsername" aria-describedby="inputGroupPrepend"
-                                                minlength="4" maxlength="30" required />
-                                            <label class="form-label text-dark " for="email">Nombre</label>
+                                                aria-describedby="inputGroupPrepend" minlength="4" maxlength="30" required />
+                                            <label class="form-label text-dark" for="name">Nombre</label>
                                             <div class="invalid-feedback">
-                                                Por favor ingrese un nombre valido
+                                                Por favor ingrese un nombre válido.
                                             </div>
                                         </div>
-
-
-
+                                
                                         <div data-mdb-input-init class="form-outline form-white mb-4 mt-2">
                                             <input name="apellido" type="text" id="apellido"
                                                 class="form-control form-control-lg shadow text-dark"
-                                                id="validationEmail" aria-describedby="inputGroupPrepend" minlength="4"
-                                                maxlength="30" required />
-                                            <label class="form-label text-dark" for="email">Apellido</label>
+                                                aria-describedby="inputGroupPrepend" minlength="4" maxlength="30" required />
+                                            <label class="form-label text-dark" for="apellido">Apellido</label>
                                             <div class="invalid-feedback">
-                                                Por favor ingrese un apellido valido
+                                                Por favor ingrese un apellido válido.
                                             </div>
                                         </div>
-
+                                
                                         <div data-mdb-input-init class="form-outline form-white mb-4 mt-2">
                                             <input name="telefono" type="tel" id="telefono"
                                                 class="form-control form-control-lg shadow text-dark"
-                                                id="validationEmail" aria-describedby="inputGroupPrepend"
-                                                pattern="\d{6,15}" minlength="6" maxlength="15" required />
-                                            <label class="form-label text-dark" for="email">Numero de
-                                                teléfono</label>
+                                                aria-describedby="inputGroupPrepend" pattern="\d{6,15}" minlength="6" maxlength="15" required />
+                                            <label class="form-label text-dark" for="telefono">Número de teléfono</label>
                                             <div class="invalid-feedback">
-                                                Por favor ingrse un numero de teléfono valido
+                                                Por favor ingrese un número de teléfono válido.
                                             </div>
                                         </div>
-
+                                
                                         <div data-mdb-input-init class="form-outline form-white mb-4 mt-2">
                                             <input name="email" type="email" id="email"
                                                 class="form-control form-control-lg shadow text-dark"
-                                                id="validationEmail" aria-describedby="inputGroupPrepend" minlength="10"
-                                                maxlength="40" required />
+                                                aria-describedby="inputGroupPrepend" minlength="10" maxlength="40" required />
                                             <label class="form-label text-dark" for="email">Email</label>
                                             <div class="invalid-feedback">
-                                                Por favor ingrse un correo electrónico valido.
+                                                Por favor ingrese un correo electrónico válido.
                                             </div>
                                         </div>
-
-
+                                
                                         <div class="form-outline form-white mb-4 mt-2">
                                             <input class="form-control form-control-lg shadow text-dark" type="date"
-                                                id="fecha" name="fecha" aria-describedby="inputGroupPrepend" id="fecha"
-                                                name="fecha" min="" required>
+                                                id="fecha" name="fecha" aria-describedby="inputGroupPrepend" required>
+                                                <label class="form-label text-dark" for="fecha"></label>
                                             <div class="invalid-feedback">
                                                 Por favor seleccione una fecha.
                                             </div>
                                         </div>
-
-
+                                
                                         <div class="form-outline form-white mb-4 mt-2">
-
                                             <select data-mdb-select-init name="hora"
-                                                class="form-select form-select-lg  shadow" id="hora" required>
+                                                class="form-select form-select-lg shadow" id="hora" required>
                                             </select>
-
+                                            <label class="form-label text-dark" for="hora"></label>
                                             <div class="invalid-feedback">
                                                 Por favor seleccione una hora.
                                             </div>
                                         </div>
-
-
+                                
                                         <div class="form-outline form-white mb-5">
-
-                                            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
-                                            <select data-mdb-select-init class="form-select form-select-lg  shadow"
-                                                required>
+                                            <label class="visually-hidden" for="servicio"></label>
+                                            <select name="servicio" id="servicio" data-mdb-select-init class="form-select form-select-lg shadow" required>
                                                 <option selected value="">Seleccione un servicio</option>
                                                 <option value="servicio1">Reparación del motor</option>
                                                 <option value="servicio2">Cambio de aceite</option>
@@ -198,23 +185,20 @@
                                                 <option value="servicio7">Reparación del tren delantero</option>
                                                 <option value="servicio8">ABC de frenos</option>
                                                 <option value="servicio9">Reparación de frenos</option>
-                                                <option value="servicio10">Reparación de sistemas de embrague
-                                                </option>
+                                                <option value="servicio10">Reparación de sistemas de embrague</option>
                                                 <option value="servicio11">Otro</option>
                                             </select>
-
-
                                             <div class="invalid-feedback">
                                                 Por favor seleccione un servicio.
                                             </div>
                                         </div>
-
+                                
                                         <div class="col-12 mt-2">
                                             <button class="btn btn-primary" type="submit">Enviar datos</button>
                                         </div>
                                     </div>
-
                                 </form>
+                                
                             </div>
                         </div>
                     </div>

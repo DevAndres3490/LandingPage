@@ -297,10 +297,7 @@
             <h3 class="footer__copyright">Derechos reservados &copy; Monarch Consulting</h3>
         </section>
     </footer>
-    <script src="./js/slider.js"></script>
-    <script src="./js/questions.js"></script>
-    <script src="./js/menu.js"></script>
-    <script src="./js/cita.js"></script>
+
     <script src="./js/obtenerFecha.js"></script>
     <script src="./js/obtenerHora.js"></script>
     <script src="./js/validar.js"></script>
@@ -316,56 +313,6 @@
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
     </script>
 
-
-    <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (() => {
-            'use strict'
-
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            const forms = document.querySelectorAll('.needs-validation')
-
-            // Loop over them and prevent submission
-            Array.from(forms).forEach(form => {
-                form.addEventListener('submit', event => {
-                    if (!form.checkValidity()) {
-                        event.preventDefault()
-                        event.stopPropagation()
-                    }
-
-                    form.classList.add('was-validated')
-                }, false)
-            })
-        })()
-    </script>
-
-    <script>
-        $(document).ready(function () {
-            // Escucha el evento de envío del formulario de creación
-            $('#createForm').submit(function (event) {
-                // Evita el envío del formulario por defecto
-                event.preventDefault();
-
-                // Obtiene los datos del formulario
-                var formData = $(this).serialize();
-
-                // Realiza una solicitud AJAX POST para crear un nuevo rol
-                $.ajax({
-                    url: "{{ route('roles.store') }}",
-                    type: "POST",
-                    data: formData,
-                    success: function (response) {
-                        // Actualiza la interfaz de usuario, por ejemplo, recarga la página o actualiza la tabla de roles
-                        window.location.reload();
-                    },
-                    error: function (xhr) {
-                        // Maneja errores, por ejemplo, muestra un mensaje de error al usuario
-                        console.log(xhr.responseText);
-                    }
-                });
-            });
-        });
-    </script>
 
 </body>
 

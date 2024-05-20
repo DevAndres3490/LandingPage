@@ -1,30 +1,21 @@
-document.addEventListener('DOMContentLoaded', function () {
+(function () {
   'use strict';
 
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.querySelectorAll('.needs-validation');
+  var forms = document.querySelectorAll('.needs-validation');
 
   // Loop over them and prevent submission
-  Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
-      if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+
         form.classList.add('was-validated');
-      } else {
-        event.preventDefault(); // Prevent the form from actually submitting
-
-        // Show the modal
-        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-        successModal.show();
-
-        // Redirect to the homepage after a delay
-        setTimeout(() => {
-          window.location.href = 'index.html'; // Change this to your homepage URL
-        }, 3000);
-      }
-    }, false);
-  });
+      }, false);
+    });
 
   const phoneInput = document.getElementById('telefono');
   const phonePattern = /^\d{6,14}$/;
@@ -51,11 +42,12 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   const fechaInput = document.getElementById('fecha');
-  const today = new Date().toISOString().split('T')[0];
-  fechaInput.setAttribute('min', today);
+  const currentDate = new Date();
+  const formattedToday = currentDate.toISOString().split('T')[0];
+  fechaInput.setAttribute('min', formattedToday);
 
   fechaInput.addEventListener('input', function () {
-    if (new Date(fechaInput.value) < new Date(today)) {
+    if (new Date(fechaInput.value) < new Date(formattedToday)) {
       fechaInput.setCustomValidity('Por favor seleccione una fecha válida.');
     } else {
       fechaInput.setCustomValidity('');
@@ -83,11 +75,10 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   function actualizarHorasDisponibles() {
-    const fechaInput = document.getElementById('fecha').value;
-    const selectedDate = new Date(fechaInput);
-    const currentDate = new Date();
-    const currentDay = selectedDate.getDay();
+    const fechaValue = document.getElementById('fecha').value;
+    const selectedDate = new Date(fechaValue);
     const currentHour = currentDate.getHours();
+    const currentDay = selectedDate.getDay();
     let limitHour;
 
     // Determinar el límite de horas según el día de la semana
@@ -124,4 +115,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Llamar a la función al cargar la página para mostrar las horas disponibles basadas en la fecha inicial
   actualizarHorasDisponibles();
-});
+})();

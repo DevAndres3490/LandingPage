@@ -175,6 +175,8 @@
                                             <label class="visually-hidden" for="servicioSelect"></label>
                                             <select name="servicio" id="servicioSelect" data-mdb-select-init
                                                 class="form-select form-select-lg shadow" required>
+                                            <label class="visually-hidden" for="servicioSelect"></label>
+                                            <select name="servicio" id="servicioSelect" data-mdb-select-init class="form-select form-select-lg shadow" required>
                                                 <option selected value="">Seleccione un servicio</option>
                                                 <option value="Reparación del motor">Reparación del motor</option>
                                                 <option value="Cambio de aceite">Cambio de aceite</option>
@@ -187,6 +189,17 @@
                                                 <option value="servicio9">Reparación de frenos</option>
                                                 <option value="servicio10">Reparación de sistemas de embrague</option>
                                                 <option value="servicio11">Otro</option>
+                                                <option value="Reparación del motor">Reparación del motor</option>
+                                                <option value="Cambio de aceite">Cambio de aceite</option>
+                                                <option value="ABC de Motor">ABC de Motor</option>
+                                                <option value="Diagnóstico computarizado">Diagnóstico computarizado</option>
+                                                <option value="Latonería y pintura">Latonería y pintura</option>
+                                                <option value="Reparación de aire acondicionado">Reparación de aire acondicionado</option>
+                                                <option value="Reparación del tren delantero">Reparación del tren delantero</option>
+                                                <option value="ABC de frenos">ABC de frenos</option>
+                                                <option value="Reparación de frenos">Reparación de frenos</option>
+                                                <option value="Reparación de sistemas de embrague">Reparación de sistemas de embrague</option>
+                                                <option value="Otro">Otro</option>
                                             </select>
                                             <div class="invalid-feedback">
                                                 Por favor seleccione un servicio.
@@ -194,6 +207,8 @@
                                         </div>
 
 
+                                        
+                                
                                         <div class="col-12 mt-2">
                                             <button class="btn btn-primary" type="submit">Enviar datos</button>
                                         </div>
@@ -210,7 +225,7 @@
         </div>
 
         <!-- Modal -->
-        <!--<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content bg-dark text-white">
                     <div class="modal-header">
@@ -222,7 +237,7 @@
 
                 </div>
             </div>
-        </div>-->
+        </div>
 
 
         <section class="mapa">
@@ -353,6 +368,8 @@
 </script>
     
 
+  
+    <script src="./js/validar.js"></script>
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js">
     </script>
@@ -364,6 +381,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
     </script>
+
+<script src="js/enviarDatos.js"></script>
 
 
 </body>

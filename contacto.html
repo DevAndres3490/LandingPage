@@ -75,10 +75,12 @@
     <main>
         <section class="team">
             <div class="card bg-image hover-overlay ripple shadow-1-strong rounded" data-mdb-ripple-color="light">
-                <img src="./image/teamFinal.jpg" class="card-img shadow-lg" style="background-color: rgba(0, 0, 0, 0.5)">
+                <img src="./image/teamFinal.jpg" class="card-img shadow-lg"
+                    style="background-color: rgba(0, 0, 0, 0.5)">
                 <div class="mask text-light d-flex justify-content-center flex-column text-center">
                     <h1 class="fs-1">Conoce a nuestro equipo.</h1>
-                    <p class="m-0">Nuestro equipo de expertos dedicados está aquí para brindarte el mejor servicio y cuidado para tu vehículo.</p>
+                    <p class="m-0">Nuestro equipo de expertos dedicados está aquí para brindarte el mejor servicio y
+                        cuidado para tu vehículo.</p>
                 </div>
             </div>
         </section>
@@ -112,72 +114,70 @@
 
                                 <form id="reservaForm" method="POST" class="row g-3 needs-validation" novalidate>
                                     <div class="mb-md-4 mt-md-3 pb-3">
-                                
+
                                         <div data-mdb-input-init class="form-outline form-white mb-4">
                                             <input name="name" type="text" id="name"
                                                 class="form-control form-control-lg shadow text-dark"
-                                                aria-describedby="inputGroupPrepend" minlength="4" maxlength="30" required />
+                                                aria-describedby="inputGroupPrepend" minlength="4" maxlength="30"
+                                                required />
                                             <label class="form-label text-dark" for="name">Nombre</label>
                                             <div class="invalid-feedback">
                                                 Por favor ingrese un nombre válido.
                                             </div>
                                         </div>
-                                
+
                                         <div data-mdb-input-init class="form-outline form-white mb-4 mt-2">
                                             <input name="apellido" type="text" id="apellido"
                                                 class="form-control form-control-lg shadow text-dark"
-                                                aria-describedby="inputGroupPrepend" minlength="4" maxlength="30" required />
+                                                aria-describedby="inputGroupPrepend" minlength="4" maxlength="30"
+                                                required />
                                             <label class="form-label text-dark" for="apellido">Apellido</label>
                                             <div class="invalid-feedback">
                                                 Por favor ingrese un apellido válido.
                                             </div>
                                         </div>
-                                
+
                                         <div data-mdb-input-init class="form-outline form-white mb-4 mt-2">
                                             <input name="telefono" type="tel" id="telefono"
                                                 class="form-control form-control-lg shadow text-dark"
-                                                aria-describedby="inputGroupPrepend" pattern="\d{6,15}" minlength="6" maxlength="15" required />
-                                            <label class="form-label text-dark" for="telefono">Número de teléfono</label>
+                                                aria-describedby="inputGroupPrepend" pattern="\d{6,15}" minlength="6"
+                                                maxlength="15" required />
+                                            <label class="form-label text-dark" for="telefono">Número de
+                                                teléfono</label>
                                             <div class="invalid-feedback">
                                                 Por favor ingrese un número de teléfono válido.
                                             </div>
                                         </div>
-                                
+
                                         <div data-mdb-input-init class="form-outline form-white mb-4 mt-2">
                                             <input name="email" type="email" id="email"
                                                 class="form-control form-control-lg shadow text-dark"
-                                                aria-describedby="inputGroupPrepend" minlength="10" maxlength="40" required />
+                                                aria-describedby="inputGroupPrepend" minlength="10" maxlength="40"
+                                                required />
                                             <label class="form-label text-dark" for="email">Email</label>
                                             <div class="invalid-feedback">
                                                 Por favor ingrese un correo electrónico válido.
                                             </div>
                                         </div>
-                                
+
                                         <div class="form-outline form-white mb-4 mt-2">
-                                            <input class="form-control form-control-lg shadow text-dark" type="date"
-                                                id="fecha" name="fecha" aria-describedby="inputGroupPrepend" required>
-                                                <label class="form-label text-dark" for="fecha"></label>
+                                            <input class="form-control form-control-lg shadow text-dark"
+                                                type="datetime-local" id="fecha" name="fecha"
+                                                aria-describedby="inputGroupPrepend" required>
+                                            <label class="form-label text-dark" for="fecha"></label>
                                             <div class="invalid-feedback">
-                                                Por favor seleccione una fecha.
+                                                Por favor seleccione una fecha y hora validas.
                                             </div>
                                         </div>
-                                
-                                        <div class="form-outline form-white mb-4 mt-2">
-                                            <select data-mdb-select-init name="hora"
-                                                class="form-select form-select-lg shadow" id="hora" required>
-                                            </select>
-                                            <label class="form-label text-dark" for="hora"></label>
-                                            <div class="invalid-feedback">
-                                                Por favor seleccione una hora.
-                                            </div>
-                                        </div>
-                                
+
+
                                         <div class="form-outline form-white mb-5">
-                                            <label class="visually-hidden" for="servicio"></label>
-                                            <select name="servicio" id="servicio" data-mdb-select-init class="form-select form-select-lg shadow" required>
+                                            <label class="visually-hidden" for="servicioSelect"></label>
+                                            <select name="servicio" id="servicioSelect" data-mdb-select-init
+                                                class="form-select form-select-lg shadow" required>
                                                 <option selected value="">Seleccione un servicio</option>
-                                                <option value="servicio1">Reparación del motor</option>
-                                                <option value="servicio2">Cambio de aceite</option>
+                                                <option value="Reparación del motor">Reparación del motor</option>
+                                                <option value="Cambio de aceite">Cambio de aceite</option>
                                                 <option value="servicio3">ABC de Motor</option>
                                                 <option value="servicio4">Diagnóstico computarizado</option>
                                                 <option value="servicio5">Latonería y pintura</option>
@@ -192,13 +192,14 @@
                                                 Por favor seleccione un servicio.
                                             </div>
                                         </div>
-                                
+
+
                                         <div class="col-12 mt-2">
                                             <button class="btn btn-primary" type="submit">Enviar datos</button>
                                         </div>
                                     </div>
                                 </form>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -274,17 +275,84 @@
             <div class="footer__social">
                 <a href="#" class="footer__icons"><img src="./image/facebook.svg" alt="facebook"
                         class="footer__img"></a>
-                <a href="https://www.instagram.com/garzoautotaller/?igsh=andqaWMxaTZlZDU%3D" class="footer__icons" target="_blank"><img src="./image/instagram.svg" alt="instagram"
-                        class="footer__img"></a>
+                <a href="https://www.instagram.com/garzoautotaller/?igsh=andqaWMxaTZlZDU%3D" class="footer__icons"
+                    target="_blank"><img src="./image/instagram.svg" alt="instagram" class="footer__img"></a>
                 <!--<a href="#" class="footer__icons"><img src="./image/twitter.svg" alt="twitter" class="footer__img"></a> -->
             </div>
             <h3 class="footer__copyright">Derechos reservados &copy; Monarch Consulting</h3>
         </section>
     </footer>
 
-    <script src="./js/obtenerFecha.js"></script>
-    <script src="./js/obtenerHora.js"></script>
-    <script src="./js/validar.js"></script>
+
+   
+
+
+<script src="js/validar.js"></script>
+<script>
+    document.getElementById('reservaForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+        
+        const fecha = document.getElementById('fecha').value;
+    
+        if (!fecha) {
+            alert('Por favor, introduce una fecha válida.');
+            return;
+        }
+    
+        const fechaHoraLocal = new Date(`${fecha}:00`);
+        
+        if (isNaN(fechaHoraLocal.getTime())) {
+            alert('Por favor, introduce una fecha válida.');
+            return;
+        }
+    
+        const fechaHoraUTC = new Date(fechaHoraLocal.getTime() - (fechaHoraLocal.getTimezoneOffset() * 60000)).toISOString();
+    
+        const servicioSelect = document.getElementById('servicioSelect');
+        let servicioSeleccionado = '';
+    
+        if (servicioSelect && servicioSelect.selectedIndex !== -1) {
+            servicioSeleccionado = servicioSelect.options[servicioSelect.selectedIndex].value;
+        }
+    
+        const formData = {
+            name: document.getElementById('name').value,
+            last_name: document.getElementById('apellido').value,
+            phone_number: document.getElementById('telefono').value,
+            email: document.getElementById('email').value,
+            service_type: servicioSeleccionado,
+            state: "Pending",
+            appointment_date: fechaHoraUTC
+        };
+    
+        console.log('Datos enviados:', JSON.stringify(formData));
+    
+        try {
+            const response = await fetch('https://localhost:7257/api/appointment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+    
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error('Hubo un problema al enviar los datos. Respuesta del servidor: ' + errorText);
+            }
+    
+            const data = await response.json();
+            console.log(data);
+            alert('Datos enviados con éxito');
+            window.location.href = 'index.html';
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Hubo un problema al enviar los datos. Por favor, inténtalo de nuevo más tarde.');
+        }
+    });
+</script>
+    
+
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js">
     </script>

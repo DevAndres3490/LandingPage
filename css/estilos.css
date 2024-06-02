@@ -701,6 +701,16 @@
   .footer__img {
     width: 30px;
   }
+  .invalid-feedback {
+    display: none; /* Oculta todos los mensajes de error por defecto */
+    color: red;
+    font-size: 14px;
+}
+
+.invalid-feedback.active {
+    display: block; /* Muestra el mensaje de error cuando se active */
+}
+
 
   /* Media queries*/
   @media (max-width:800px) {

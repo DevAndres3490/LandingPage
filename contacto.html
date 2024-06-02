@@ -119,7 +119,7 @@
                                             <input name="name" type="text" id="name"
                                                 class="form-control form-control-lg shadow text-dark"
                                                 aria-describedby="inputGroupPrepend" minlength="4" maxlength="30"
-                                                required />
+                                                pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{4,30}" required />
                                             <label class="form-label text-dark" for="name">Nombre</label>
                                             <div class="invalid-feedback">
                                                 Por favor ingrese un nombre válido.
@@ -130,7 +130,7 @@
                                             <input name="apellido" type="text" id="apellido"
                                                 class="form-control form-control-lg shadow text-dark"
                                                 aria-describedby="inputGroupPrepend" minlength="4" maxlength="30"
-                                                required />
+                                                pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{4,30}" required />
                                             <label class="form-label text-dark" for="apellido">Apellido</label>
                                             <div class="invalid-feedback">
                                                 Por favor ingrese un apellido válido.
@@ -161,30 +161,46 @@
                                         </div>
 
                                         <div class="form-outline form-white mb-4 mt-2">
-                                            <input class="form-control form-control-lg shadow text-dark"
-                                                type="datetime-local" id="fecha" name="fecha"
-                                                aria-describedby="inputGroupPrepend" required>
-                                            <label class="form-label text-dark" for="fecha"></label>
+                                            <label class="form-label text-dark" for="fecha">Fecha</label>
+                                            <input class="form-control form-control-lg shadow text-dark" type="date"
+                                                id="fecha" name="fecha" aria-describedby="inputGroupPrepend" required>
                                             <div class="invalid-feedback">
-                                                Por favor seleccione una fecha y hora validas.
+                                                Por favor seleccione una fecha válida.
+                                            </div>
+                                        </div>
+
+                                        <div class="form-outline form-white mb-4 mt-2">
+                                            <label class="form-label text-dark" for="hora">Hora</label>
+                                            <select class="form-select form-select-lg shadow text-dark" id="hora"
+                                                name="hora" aria-describedby="inputGroupPrepend" required>
+                                                <option value="" selected>Seleccione una hora</option>
+                                                <!-- Las opciones se generarán dinámicamente -->
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Por favor seleccione una hora válida.
                                             </div>
                                         </div>
 
 
                                         <div class="form-outline form-white mb-5">
                                             <label class="visually-hidden" for="servicioSelect"></label>
-                                            <select name="servicio" id="servicioSelect" data-mdb-select-init class="form-select form-select-lg shadow" required>
+                                            <select name="servicio" id="servicio" data-mdb-select-init
+                                                class="form-select form-select-lg shadow" required>
                                                 <option selected value="">Seleccione un servicio</option>
                                                 <option value="Reparación del motor">Reparación del motor</option>
                                                 <option value="Cambio de aceite">Cambio de aceite</option>
                                                 <option value="ABC de Motor">ABC de Motor</option>
-                                                <option value="Diagnóstico computarizado">Diagnóstico computarizado</option>
+                                                <option value="Diagnóstico computarizado">Diagnóstico computarizado
+                                                </option>
                                                 <option value="Latonería y pintura">Latonería y pintura</option>
-                                                <option value="Reparación de aire acondicionado">Reparación de aire acondicionado</option>
-                                                <option value="Reparación del tren delantero">Reparación del tren delantero</option>
+                                                <option value="Reparación de aire acondicionado">Reparación de aire
+                                                    acondicionado</option>
+                                                <option value="Reparación del tren delantero">Reparación del tren
+                                                    delantero</option>
                                                 <option value="ABC de frenos">ABC de frenos</option>
                                                 <option value="Reparación de frenos">Reparación de frenos</option>
-                                                <option value="Reparación de sistemas de embrague">Reparación de sistemas de embrague</option>
+                                                <option value="Reparación de sistemas de embrague">Reparación de
+                                                    sistemas de embrague</option>
                                                 <option value="Otro">Otro</option>
                                             </select>
                                             <div class="invalid-feedback">
@@ -193,8 +209,8 @@
                                         </div>
 
 
-                                        
-                                
+
+
                                         <div class="col-12 mt-2">
                                             <button class="btn btn-primary" type="submit">Enviar datos</button>
                                         </div>
@@ -246,6 +262,7 @@
         </section>
     </main>
 
+
     <footer class="footer">
         <section class="footer__container container">
             <nav class="nav nav--footer">
@@ -284,78 +301,8 @@
         </section>
     </footer>
 
+    <script src="js/validar.js"></script>
 
-   
-
-
-<script src="js/validar.js"></script>
-<script>
-    document.getElementById('reservaForm').addEventListener('submit', async function(event) {
-        event.preventDefault();
-        
-        const fecha = document.getElementById('fecha').value;
-    
-        if (!fecha) {
-            alert('Por favor, introduce una fecha válida.');
-            return;
-        }
-    
-        const fechaHoraLocal = new Date(`${fecha}:00`);
-        
-        if (isNaN(fechaHoraLocal.getTime())) {
-            alert('Por favor, introduce una fecha válida.');
-            return;
-        }
-    
-        const fechaHoraUTC = new Date(fechaHoraLocal.getTime() - (fechaHoraLocal.getTimezoneOffset() * 60000)).toISOString();
-    
-        const servicioSelect = document.getElementById('servicioSelect');
-        let servicioSeleccionado = '';
-    
-        if (servicioSelect && servicioSelect.selectedIndex !== -1) {
-            servicioSeleccionado = servicioSelect.options[servicioSelect.selectedIndex].value;
-        }
-    
-        const formData = {
-            name: document.getElementById('name').value,
-            last_name: document.getElementById('apellido').value,
-            phone_number: document.getElementById('telefono').value,
-            email: document.getElementById('email').value,
-            service_type: servicioSeleccionado,
-            state: "Pending",
-            appointment_date: fechaHoraUTC
-        };
-    
-        console.log('Datos enviados:', JSON.stringify(formData));
-    
-        try {
-            const response = await fetch('https://localhost:7257/api/appointment', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-    
-            if (!response.ok) {
-                const errorText = await response.text();
-                throw new Error('Hubo un problema al enviar los datos. Respuesta del servidor: ' + errorText);
-            }
-    
-            const data = await response.json();
-            console.log(data);
-            alert('Datos enviados con éxito');
-            window.location.href = 'index.html';
-        } catch (error) {
-            console.error('Error:', error);
-            alert('Hubo un problema al enviar los datos. Por favor, inténtalo de nuevo más tarde.');
-        }
-    });
-</script>
-    
-
-  
-    <script src="./js/validar.js"></script>
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js">
     </script>
